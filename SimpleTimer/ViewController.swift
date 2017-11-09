@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pauseButton: UIButton!
     
+    @IBOutlet weak var enterTimeTextField: UITextField!
+    
     
     var counter = 15.00
     var timer = Timer()
@@ -63,7 +65,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     @objc func updateTimer() {
         counter = counter - 0.01
         timeCounter.text = String(format: "%.2f", counter)
@@ -78,6 +79,22 @@ class ViewController: UIViewController {
     
 
  
+    @IBAction func timeTextFieldTapped(_ sender: UITextField) {
+    
+    }
+    
+    
+ 
+    @IBAction func enterTimeTapped(_ sender: UIButton) {
+        
+        guard let customizedTime = enterTimeTextField.text else {
+            print("Time can not be blank")
+            return
+        }
+        timeCounter.text = customizedTime
+        
+    }
+    
     
 
 }

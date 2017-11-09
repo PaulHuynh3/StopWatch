@@ -49,11 +49,30 @@
                                     <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kib-Ub-BwK"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B94-Xi-Ssv">
+                                <rect key="frame" x="90" y="518" width="212" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="timeTextFieldTapped:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="GhG-JB-bzC"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvd-4I-NCq">
+                                <rect key="frame" x="123" y="574" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter Time"/>
+                                <connections>
+                                    <action selector="enterTimeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oal-mh-MjY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="enterTimeTextField" destination="B94-Xi-Ssv" id="py1-ug-jq4"/>
                         <outlet property="pauseButton" destination="wh3-OT-jXS" id="PdI-kD-Urr"/>
                         <outlet property="startButton" destination="0zy-C3-mTp" id="Kuc-n0-kaq"/>
                         <outlet property="timeCounter" destination="GMV-VJ-fIi" id="Zk4-Gc-rVu"/>
