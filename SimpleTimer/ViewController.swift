@@ -64,20 +64,13 @@ class ViewController: UIViewController {
     
     
     @objc func updateTimer() {
-   
+     
+        counter = counter + 0.1
+        timeCounter.text = String(format: "%.1f", counter)
 
     }
     
-    func stopWatch() {
-        indicator = false
-    }
-    
-    func resetWatch() {
-        counter = 0
-        timeCounter.text = String(format: "%.1f", counter)
-        
-    }
-    
+
  
     
 
