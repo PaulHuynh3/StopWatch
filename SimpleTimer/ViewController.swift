@@ -12,11 +12,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var timeCounter: UILabel!
 
+    @IBOutlet weak var startButton: UIButton!
+    
+    @IBOutlet weak var pauseButton: UIButton!
+    
+    
     var counter = 0.0
-    var indicator: Bool?
+    var timer = Timer()
+    var isPlaying = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timeCounter.text = String(counter)
+        pauseButton.isEnabled = false
         
     }
 
@@ -24,10 +33,11 @@ class ViewController: UIViewController {
         startWatch()
     }
     
-    @IBAction func stop(_ sender: UIButton) {
-        stopWatch()
-    }
     
+    @IBAction func pause(_ sender: UIButton) {
+        
+        
+    }
     
     @IBAction func reset(_ sender: UIButton) {
         resetWatch()

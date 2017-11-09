@@ -44,9 +44,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wh3-OT-jXS">
                                 <rect key="frame" x="151" y="267" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop"/>
+                                <state key="normal" title="Pause"/>
                                 <connections>
-                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w2b-ky-PkQ"/>
+                                    <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kib-Ub-BwK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -54,6 +54,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="pauseButton" destination="wh3-OT-jXS" id="PdI-kD-Urr"/>
+                        <outlet property="startButton" destination="0zy-C3-mTp" id="Kuc-n0-kaq"/>
                         <outlet property="timeCounter" destination="GMV-VJ-fIi" id="Zk4-Gc-rVu"/>
                     </connections>
                 </viewController>
