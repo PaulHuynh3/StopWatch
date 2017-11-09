@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleTimer/ViewController.swift"
-            timestampString = "531934903.284084"
+            timestampString = "531936580.409905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "start(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,23 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleTimer/ViewController.swift"
-            timestampString = "531934903.284834"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "start(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SimpleTimer/ViewController.swift"
-            timestampString = "531934903.285211"
+            timestampString = "531936580.410496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -68,12 +52,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleTimer/ViewController.swift"
-            timestampString = "531934903.285567"
+            timestampString = "531936580.410863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "pause(_:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "reset(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -84,12 +68,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleTimer/ViewController.swift"
-            timestampString = "531934903.285815"
+            timestampString = "531936580.411088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "reset(_:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "start(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

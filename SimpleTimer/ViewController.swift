@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         if (isPlaying) {
             return
         }
+        
+        counter = 15.00
+        timeCounter.text = String(counter)
         startButton.isEnabled = false
         pauseButton.isEnabled = true
         
@@ -40,7 +43,6 @@ class ViewController: UIViewController {
         isPlaying = true
         
     }
-    
     
     @IBAction func pause(_ sender: UIButton) {
         startButton.isEnabled = true
@@ -61,16 +63,15 @@ class ViewController: UIViewController {
         
     }
     
-
-    
     
     @objc func updateTimer() {
         counter = counter - 0.01
         timeCounter.text = String(format: "%.2f", counter)
         
         if counter < 0 {
-            timeCounter.text = "Time's Up"
             timer.invalidate()
+            isPlaying = false
+            timeCounter.text = "Time's Up"
             startButton.isEnabled = true
         }
     }
