@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     
     
-    var counter = 0.0
+    var counter = 0.00
     var timer = Timer()
     var isPlaying = false
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         startButton.isEnabled = false
         pauseButton.isEnabled = true
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         isPlaying = true
     }
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         
         timer.invalidate()
         isPlaying = false
-        counter = 0.0
+        counter = 0.00
         timeCounter.text = String(counter)
         
     }
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     @objc func updateTimer() {
      
         counter = counter + 0.1
-        timeCounter.text = String(format: "%.1f", counter)
+        timeCounter.text = String(format: "%.2f", counter)
 
     }
     
