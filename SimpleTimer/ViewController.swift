@@ -53,8 +53,10 @@ class ViewController: UIViewController {
         startButton.isEnabled = true
         pauseButton.isEnabled = false
         
-        timer.
-        
+        timer.invalidate()
+        isPlaying = false
+        counter = 0.0
+        timeCounter.text = String(counter)
         
     }
     
