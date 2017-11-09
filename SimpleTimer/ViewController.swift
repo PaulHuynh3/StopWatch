@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     @objc func updateTimer() {
      
-        counter = counter + 0.1
+        counter = counter + 0.01
         timeCounter.text = String(format: "%.2f", counter)
 
     }
