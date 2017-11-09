@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hideKeyboardWhenTappedAround()
         timeCounter.text = String(counter)
         pauseButton.isEnabled = false
         
@@ -36,7 +36,8 @@ class ViewController: UIViewController {
             return
         }
         
-        counter = 15.00
+        counter = Double(enterTimeTextField.text!)!
+        
         timeCounter.text = String(counter)
         startButton.isEnabled = false
         pauseButton.isEnabled = true
@@ -60,7 +61,7 @@ class ViewController: UIViewController {
         
         timer.invalidate()
         isPlaying = false
-        counter = 15.00
+        counter = 0.0
         timeCounter.text = String(counter)
         
     }
@@ -77,13 +78,6 @@ class ViewController: UIViewController {
         }
     }
     
-
- 
-    @IBAction func timeTextFieldTapped(_ sender: UITextField) {
-    
-    }
-    
-    
  
     @IBAction func enterTimeTapped(_ sender: UIButton) {
         
@@ -97,5 +91,19 @@ class ViewController: UIViewController {
     
     
 
+}
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }
 
