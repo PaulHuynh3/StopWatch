@@ -30,33 +30,39 @@ class ViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: UIButton) {
-        startWatch()
+        if (isPlaying) {
+            return
+        }
+        startButton.isEnabled = false
+        pauseButton.isEnabled = true
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        isPlaying = true
     }
     
     
     @IBAction func pause(_ sender: UIButton) {
+        startButton.isEnabled = true
+        pauseButton.isEnabled = false
         
-        
+        timer.invalidate()
+        isPlaying = false
     }
     
     @IBAction func reset(_ sender: UIButton) {
-        resetWatch()
+        startButton.isEnabled = true
+        pauseButton.isEnabled = false
+        
+        timer.
+        
+        
     }
     
 
     
     
-    func startWatch() {
-        
-        indicator = true
-        repeat {
-            if counter > 1000000000000000000 {
-                indicator = false
-            }
-            counter = counter + 0.1
-            timeCounter.text = String(format: "%.1f", counter)
-        
-        } while indicator == true
+    @objc func updateTimer() {
+   
 
     }
     
