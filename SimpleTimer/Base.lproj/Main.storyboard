@@ -55,9 +55,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="timeTextFieldTapped:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="GhG-JB-bzC"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvd-4I-NCq">
                                 <rect key="frame" x="123" y="574" width="128" height="30"/>

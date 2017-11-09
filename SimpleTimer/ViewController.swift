@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterTimeTextField: UITextField!
     
     
-    var counter = 15.00
+    var counter = 0.00
     var timer = Timer()
     var isPlaying = false
     
@@ -30,13 +30,19 @@ class ViewController: UIViewController {
         pauseButton.isEnabled = false
         
     }
-
+    
+    
     @IBAction func start(_ sender: UIButton) {
         if (isPlaying) {
             return
         }
         
-        counter = Double(enterTimeTextField.text!)!
+        guard let time = Double(enterTimeTextField.text!) else {
+            print("Enter specified time")
+            return
+        }
+        
+        counter = time
         
         timeCounter.text = String(counter)
         startButton.isEnabled = false
@@ -88,8 +94,6 @@ class ViewController: UIViewController {
         timeCounter.text = customizedTime
         
     }
-    
-    
 
 }
 
@@ -100,6 +104,7 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
+
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
