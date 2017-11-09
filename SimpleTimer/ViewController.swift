@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var timeCounter: UILabel!
-
+    
     @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var pauseButton: UIButton!
@@ -37,78 +37,76 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let time = Double(enterTimeTextField.text!) else {
-            print("Enter specified time")
-            return
+            guard let time = Double(enterTimeTextField.text!) else {
+                print("Enter specified time")
+                return
+            }
+            counter = time
+            timeCounter.text = String(counter)
+            startButton.isEnabled = false
+            pauseButton.isEnabled = true
+            
+            timer = Timer.scheduledTimer(timeInterval: -0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            isPlaying = true
+            enterTimeTextField.text = ""
+
         }
         
-        counter = time
-        
-        timeCounter.text = String(counter)
-        startButton.isEnabled = false
-        pauseButton.isEnabled = true
-        
-        timer = Timer.scheduledTimer(timeInterval: -0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        isPlaying = true
-        
-    }
-    
-    @IBAction func pause(_ sender: UIButton) {
-        startButton.isEnabled = true
-        pauseButton.isEnabled = false
-        
-        timer.invalidate()
-        isPlaying = false
-    }
-    
-    @IBAction func reset(_ sender: UIButton) {
-        startButton.isEnabled = true
-        pauseButton.isEnabled = false
-        
-        timer.invalidate()
-        isPlaying = false
-        counter = 0.0
-        timeCounter.text = String(counter)
-        
-    }
-    
-    @objc func updateTimer() {
-        counter = counter - 0.01
-        timeCounter.text = String(format: "%.2f", counter)
-        
-        if counter < 0 {
+        @IBAction func pause(_ sender: UIButton) {
+            startButton.isEnabled = true
+            pauseButton.isEnabled = false
+            
             timer.invalidate()
             isPlaying = false
-            timeCounter.text = "Time's Up"
+        }
+        
+        @IBAction func reset(_ sender: UIButton) {
             startButton.isEnabled = true
+            pauseButton.isEnabled = false
+            
+            timer.invalidate()
+            isPlaying = false
+            counter = 0.0
+            timeCounter.text = String(counter)
+            
         }
-    }
-    
- 
-    @IBAction func enterTimeTapped(_ sender: UIButton) {
         
-        guard let customizedTime = enterTimeTextField.text else {
-            print("Time can not be blank")
-            return
+        @objc func updateTimer() {
+            counter = counter - 0.01
+            timeCounter.text = String(format: "%.2f", counter)
+            
+            if counter < 0 {
+                timer.invalidate()
+                isPlaying = false
+                timeCounter.text = "Time's Up"
+                startButton.isEnabled = true
+            }
         }
-        timeCounter.text = customizedTime
+        
+        
+        @IBAction func enterTimeTapped(_ sender: UIButton) {
+            
+            guard let customizedTime = enterTimeTextField.text else {
+                print("Time can not be blank")
+                return
+            }
+            timeCounter.text = customizedTime
+        }
         
     }
-
-}
-
-extension UIViewController {
     
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
+    extension UIViewController {
+        
+        func hideKeyboardWhenTappedAround() {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+        
+        
+        @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
+        
 }
 
